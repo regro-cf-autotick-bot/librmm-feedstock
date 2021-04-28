@@ -11,7 +11,7 @@ source:
     folder: rmm
 
 build:
-  number: 1
+  number: 2
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -27,7 +27,7 @@ requirements:
     - spdlog =1.7.0
     - thrust >=1.9.0
   run:
-    # - spdlog =1.7.0  # <--- done via run_exports
+    - spdlog =1.7.0  # (this version does not have run_exports yet...)
     - thrust >=1.9.0
 
 test:
