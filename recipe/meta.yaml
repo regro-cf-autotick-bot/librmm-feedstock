@@ -11,7 +11,7 @@ source:
     folder: rmm
 
 build:
-  number: 0
+  number: 1
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -23,8 +23,11 @@ requirements:
     - {{ compiler('cuda') }}
     - cmake >=3.18
     - make
-  run:
+  host:
     - spdlog =1.7.0
+    - thrust >=1.9.0
+  run:
+    # - spdlog =1.7.0  # <--- done via run_exports
     - thrust >=1.9.0
 
 test:
@@ -61,6 +64,7 @@ test:
     - test -f $PREFIX/include/rmm/mr/host/host_memory_resource.hpp
     - test -f $PREFIX/include/rmm/mr/host/new_delete_resource.hpp
     - test -f $PREFIX/include/rmm/mr/host/pinned_memory_resource.hpp
+    - test ! -d $PREFIX/lib64
 
 about:
   home: https://github.com/rapidsai/rmm
