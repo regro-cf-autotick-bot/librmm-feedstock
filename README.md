@@ -61,6 +61,13 @@ Current build status
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/librmm-feedstock?branchName=master&jobName=linux&configuration=linux_64_cuda_compiler_version11.2" alt="variant">
                 </a>
               </td>
+            </tr><tr>
+              <td>linux_ppc64le_cuda_compiler_version10.2</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12580&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/librmm-feedstock?branchName=master&jobName=linux&configuration=linux_ppc64le_cuda_compiler_version10.2" alt="variant">
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
