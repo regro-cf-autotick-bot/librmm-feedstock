@@ -27,10 +27,11 @@ requirements:
     - cmake >=3.18
     - make
   host:
-    - spdlog =1.7.0
+    # see https://github.com/rapidsai/rmm/blob/branch-21.06/cmake/Modules/RMM_thirdparty.cmake
+    - spdlog >=1.8.5
     - thrust >=1.9.0
   run:
-    - spdlog =1.7.0  # (this version does not have run_exports yet...)
+    # - spdlog >=1.8.5  # (version constraint set via run_exports)
     - thrust >=1.9.0
 
 test:
