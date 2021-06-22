@@ -1,5 +1,5 @@
 {% set name = "librmm" %}
-{% set version = "0.19.0" %}
+{% set version = "21.06.00" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: eddd5b35b016d665eb4e8ea2dd31497d913b3e1eb831124e4cb27cba747267a0
+    sha256: db382820b009332a8bc084282be4a95ba225f9edc27b350424176dfca8c22477
     folder: rmm
 
 build:
-  number: 2
+  number: 0
   skip: true  # [(not linux) or (cuda_compiler_version == "None")]
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
@@ -27,10 +27,11 @@ requirements:
     - cmake >=3.18
     - make
   host:
-    - spdlog =1.7.0
+    # see https://github.com/rapidsai/rmm/blob/branch-21.06/cmake/Modules/RMM_thirdparty.cmake
+    - spdlog >=1.8.5
     - thrust >=1.9.0
   run:
-    - spdlog =1.7.0  # (this version does not have run_exports yet...)
+    # - spdlog >=1.8.5  # (version constraint set via run_exports)
     - thrust >=1.9.0
 
 test:
@@ -74,7 +75,7 @@ about:
   license: Apache-2.0
   license_file:
     - rmm/LICENSE
-  summary: 'RAPIDS Memory Manager'
+  summary: RAPIDS Memory Manager
 
 extra:
   recipe-maintainers:
