@@ -1,5 +1,5 @@
 {% set name = "librmm" %}
-{% set version = "21.10.01" %}
+{% set version = "21.12.00" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: a9e161f1bb6db42ed720718636f3c71ce20189ec03e2dca0f410f11138ac54d9
+    sha256: 71802422a04f2e0a828f7b7ec77e5cd1d24361d6dc5bf60a534659e4c2e08a44
     folder: rmm
 
 build:
