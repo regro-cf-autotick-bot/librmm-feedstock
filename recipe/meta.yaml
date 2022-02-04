@@ -16,8 +16,8 @@ build:
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
   script_env:
-    # for some reason /usr/local/cuda is not added to $PATH in ppc64le's docker image
-    - CUDA_HOME  # [ppc64le]
+    # for some reason /usr/local/cuda is not added to $PATH in the docker image
+    - CUDA_HOME  # [ppc64le or aarch64]
 
 requirements:
   build:
