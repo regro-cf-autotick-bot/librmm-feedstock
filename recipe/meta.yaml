@@ -27,10 +27,10 @@ requirements:
     - cmake >=3.23.1
     - make
   host:
-    - spdlog >=1.8.5,<1.9
+    - spdlog
     - thrust >=1.17.2,<2
   run:
-    # - spdlog >=1.8.5,<1.9  # (version constraint set via run_exports)
+    # - spdlog  # (version constraint set via run_exports)
     - thrust >=1.17.2,<2
 
 test:
