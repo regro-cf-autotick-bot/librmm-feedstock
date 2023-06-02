@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 15e05d1aed4efc7461b159b1054c5b3026b0b7f5ed8ed40a991dde0e7a024da6
+    sha256: 41dcdf9e2e37ea1c0025fca231897c0e71be16010aa1531a4b793072d1b1a028
     folder: rmm
 
 build:
