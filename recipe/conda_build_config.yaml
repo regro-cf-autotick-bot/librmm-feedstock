@@ -31,8 +31,12 @@ fortran_compiler_version:  # [linux]
   - 9                      # [aarch64]
   - 9                      # [aarch64]
 
-cuda_compiler:
-  - nvcc
+cuda_compiler:             # [linux]
+  - nvcc                   # [ppc64le]
+  - nvcc                   # [ppc64le]
+  - nvcc                   # [ppc64le]
+  - nvcc                   # [aarch64]
+  - nvcc                   # [aarch64]
 
 cuda_compiler_version:
   - 10.2                   # [ppc64le]
