@@ -32,7 +32,7 @@ jobs:
         CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.0cxx_compiler_version12
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
-  swapfile_size: 0GiB
+  swapfile_size: 10GiB
   timeoutInMinutes: 360
 
   steps:
@@ -58,6 +58,12 @@ jobs:
          sudo docker image prune --all --force
          df -h
     displayName: Manage disk space
+  - script: |
+         sudo fallocate -l 10GiB /swapfile || true
+         sudo chmod 600 /swapfile || true
+         sudo mkswap /swapfile || true
+         sudo swapon /swapfile || true
+    displayName: Create swap file
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
