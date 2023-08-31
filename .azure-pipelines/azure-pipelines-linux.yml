@@ -32,6 +32,7 @@ jobs:
         CONFIG: linux_ppc64le_c_compiler_version12cuda_compilercuda-nvcccuda_compiler_version12.0cxx_compiler_version12
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
+  swapfile_size: 0GiB
   timeoutInMinutes: 360
 
   steps:
