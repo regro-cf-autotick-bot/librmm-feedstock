@@ -1,5 +1,6 @@
 azure:
   free_disk_space: true
+  swapfile_size: 10GiB
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
