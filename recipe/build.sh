@@ -11,7 +11,12 @@ export LIBRMM_BUILD_DIR=${LIBRMM_BUILD_DIR:=${RMM_SRC_DIR}/build}
 export INSTALL_PREFIX=${PREFIX:=${CONDA_PREFIX}}
 export CUDA_STATIC_RUNTIME=OFF
 export PER_THREAD_DEFAULT_STREAM=OFF
-export BUILD_TESTS=ON
+
+export BUILD_TESTS=OFF
+if [[ "$build_platform" == "linux-64" ]]; then
+    export BUILD_TESTS=ON
+fi
+
 export BUILD_BENCHMARKS=OFF
 export BUILD_TYPE=Release
 export VERBOSE_FLAG="-v"
