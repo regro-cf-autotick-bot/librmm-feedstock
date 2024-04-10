@@ -24,7 +24,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
-    - cmake >=3.18
+    - cmake >=3.26.4
     - make
   host:
     - spdlog
