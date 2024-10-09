@@ -1,5 +1,5 @@
 {% set name = "librmm" %}
-{% set version = "24.04.00" %}
+{% set version = "24.10.00" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/rapidsai/rmm/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: bb20877c8d92b322dbcb348c2009040784189d3d3c48f93011e13c1b34f6a22f
+    sha256: 201fcf410724f09205108b0999be05522e57e5f34114f809f27f6ee98043cf07
     folder: rmm
 
 build:
@@ -22,6 +22,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('cuda') }}
     - cmake >=3.26.4
